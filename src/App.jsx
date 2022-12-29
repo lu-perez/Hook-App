@@ -8,7 +8,8 @@
 // import Memorize from './06-memos/memo/Memorize'
 // import MemoHook from './06-memos/useMemo/MemoHook'
 // import CallbackHook from './06-memos/useCallback/CallbackHook'
-import { Padre } from './07-tarea-memo/Padre'
+// import { Padre } from './07-tarea-memo/Padre'
+import ToDoApp from './08-useReducer/ToDoApp'
 
 function App () {
   return (
@@ -24,7 +25,8 @@ function App () {
       {/* <Memorize /> */}
       {/* <MemoHook /> */}
       {/* <CallbackHook /> */}
-      <Padre />
+      {/* <Padre /> */}
+      <ToDoApp />
     </>
   )
 }
