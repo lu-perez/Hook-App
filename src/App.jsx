@@ -9,7 +9,9 @@
 // import MemoHook from './06-memos/useMemo/MemoHook'
 // import CallbackHook from './06-memos/useCallback/CallbackHook'
 // import { Padre } from './07-tarea-memo/Padre'
-import ToDoApp from './08-useReducer/ToDoApp'
+// import ToDoApp from './08-useReducer/ToDoApp'
+import { BrowserRouter } from 'react-router-dom'
+import MainApp from './09-useContext/MainApp'
 
 function App () {
   return (
@@ -26,7 +28,10 @@ function App () {
       {/* <MemoHook /> */}
       {/* <CallbackHook /> */}
       {/* <Padre /> */}
-      <ToDoApp />
+      {/* <ToDoApp /> */}
+      <BrowserRouter>
+        <MainApp />
+      </BrowserRouter>
     </>
   )
 }
