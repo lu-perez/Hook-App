@@ -7,6 +7,8 @@ const FormWithCustomHook = () => {
     password: ''
   })
 
+  console.log(useForm())
+
   const { username, email, password } = formState
 
   return (

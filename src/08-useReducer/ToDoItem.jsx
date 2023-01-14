@@ -4,6 +4,7 @@ const ToDoItem = ({ toDo, onDeleteToDo, onToggleToDo }) => {
       <span
         className={`align-self-center ${toDo.done ? 'text-decoration-line-through' : ''}`}
         onClick={() => onToggleToDo(toDo.id)}
+        aria-label="span"
       >{
         toDo.description}
       </span>

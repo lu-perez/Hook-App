@@ -6,7 +6,14 @@ const Home = () => {
   // console.log(user)
 
   return (
-    <h2>Home <small>{user?.name}</small></h2>
+    <>
+      <h2>HomePage <small>{user?.name}</small></h2>
+      <hr />
+
+      <pre aria-label="pre">
+        { JSON.stringify(user, null, 3) }
+      </pre>
+    </>
   )
 }
 

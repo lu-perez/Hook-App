@@ -1,0 +1,59 @@
+import { fireEvent, render, screen } from '@testing-library/react'
+import MultipleCustomHooks from '../../src/03-examples/MultipleCustomHooks'
+import { useCounter, useFetch } from '../../src/hooks'
+
+jest.mock('../../src/hooks/useFetch')
+jest.mock('../../src/hooks/useCounter.js')
+
+describe('Pruebas en <MultipleCustomHooks />', () => {
+  const mockIncrement = jest.fn()
+  useCounter.mockReturnValue({
+    counter: 1,
+    increment: mockIncrement
+  })
+
+  test('debe mostrar el componente por defecto', () => {
+    useFetch.mockReturnValue({
+      data: null,
+      isLoading: true,
+      hasError: null
+    })
+
+    render(<MultipleCustomHooks />)
+
+    expect(screen.getByText('Loading...'))
+
+    const nextButton = screen.getByRole('button', { name: 'Next quote' })
+    expect(nextButton.disabled).toBeTruthy()
+    // screen.debug()
+  })
+
+  test('debe mostrar un Quote', () => {
+    useFetch.mockReturnValue({
+      data: [{ author: 'Lucas', quote: 'Hola mundo' }],
+      isLoading: false,
+      hasError: null
+    })
+
+    render(<MultipleCustomHooks />)
+    expect(screen.getByText('Hola mundo')).toBeTruthy()
+
+    const nextButton = screen.getByRole('button', { name: 'Next quote' })
+    expect(nextButton.disabled).toBeFalsy()
+  })
+
+  test('debe llamar la función de incrementar', () => {
+    useFetch.mockReturnValue({
+      data: [{ author: 'Lucas', quote: 'Hola mundo' }],
+      isLoading: false,
+      hasError: null
+    })
+
+    render(<MultipleCustomHooks />)
+
+    const nextButton = screen.getByRole('button', { name: 'Next quote' })
+    fireEvent.click(nextButton)
+
+    expect(mockIncrement).toHaveBeenCalled()
+  })
+})

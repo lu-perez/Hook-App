@@ -3,8 +3,8 @@ import Message from './Message'
 
 const SimpleForm = () => {
   const [formState, setFormState] = useState({
-    username: 'strider',
-    email: 'fernando@gmail.com'
+    username: 'demo',
+    email: 'demo@gmail.com'
   })
 
   const { username, email } = formState

@@ -24,7 +24,7 @@ const MultipleCustomHooks = () => {
         disabled={isLoading}
         onClick={() => increment()}
       >
-        Next To Do
+        Next quote
       </button>
     </>
   )

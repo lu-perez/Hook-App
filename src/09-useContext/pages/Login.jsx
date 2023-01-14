@@ -6,11 +6,11 @@ const Login = () => {
 
   return (
     <>
-      <h2>Login</h2>
+      <h2>LoginPage</h2>
       <hr />
 
-      <pre>
-        { JSON.stringify(user, null, 3)}
+      <pre aria-label="pre">
+        { JSON.stringify(user, null, 3) }
       </pre>
 
       <button
